@@ -1,0 +1,24 @@
+{
+  "sectionTitle": "Experience",
+  "sectionSubtitle": "// Career journey",
+  "experiences": [
+    {
+      "id": "exp-1",
+      "company": "Tech Corp",
+      "position": "Senior Full Stack Developer",
+      "location": "San Francisco, CA",
+      "type": "full-time",
+      "startDate": "2022-03",
+      "endDate": null,
+      "current": true,
+      "description": "Leading development of customer-facing applications serving 1M+ users.",
+      "responsibilities": [
+        "Architected and implemented microservices reducing latency by 40%",
+        "Led a team of 5 developers, conducting code reviews and mentoring",
+        "Implemented CI/CD pipelines reducing deployment time by 60%",
+        "Collaborated with product team to define technical requirements"
+      ],
+      "technologies": ["React", "Node.js", "AWS", "Kubernetes", "PostgreSQL"]
+    }
+  ]
+}

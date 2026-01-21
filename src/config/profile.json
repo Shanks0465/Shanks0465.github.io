@@ -1,0 +1,21 @@
+{
+  "name": "Umashankar Kumaravelan",
+  "title": "Full Stack Developer",
+  "username": "Shanks0465",
+  "email": "umashanks99@gmail.com",
+  "location": "Chennai, Tamilnadu, India",
+  "bio": "",
+  "avatar": "/avatar.png",
+  "resume": "/resume.pdf",
+  "social": {
+    "github": "https://github.com/Shanks0465",
+    "linkedin": "https://www.linkedin.com/in/umashankar-kumaravelan-74a228146/",
+    "email": "mailto:umashanks99@gmail.com"
+  },
+  "terminalPrompt": "visitor@portfolio",
+  "welcomeMessage": [
+    "Welcome to my personal portfolio!",
+    "Type 'help' to see available commands.",
+    "Or just scroll down to explore."
+  ]
+}

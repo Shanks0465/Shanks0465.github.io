@@ -1,0 +1,284 @@
+.contact {
+  padding: 80px 20px;
+  background: var(--surface);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  margin-bottom: 48px;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  color: var(--text);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.arrow {
+  color: var(--terminal-cyan);
+}
+
+.sectionSubtitle {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-left: 28px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.terminalWindow {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.terminalHeader {
+  background: var(--surface-light);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.terminalButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminalButtons span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.btnRed { background: #ff5f56; }
+.btnYellow { background: #ffbd2e; }
+.btnGreen { background: #27ca40; }
+
+.terminalTitle {
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.terminalBody {
+  padding: 20px;
+}
+
+.terminalLine {
+  margin-bottom: 4px;
+}
+
+.prompt {
+  color: var(--primary);
+  margin-right: 8px;
+}
+
+.terminalOutput {
+  color: var(--terminal-cyan);
+  margin-bottom: 16px;
+  padding-left: 20px;
+}
+
+.terminalOutput:last-child {
+  margin-bottom: 0;
+}
+
+.available {
+  color: var(--primary);
+  position: relative;
+}
+
+.available::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.socialLinks {
+  padding: 20px 0;
+}
+
+.socialLabel {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.socialGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.socialLink:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formWrapper {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.terminalPrompt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.command {
+  color: var(--text);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.labelPrefix {
+  color: var(--terminal-magenta);
+}
+
+.input,
+.textarea {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--terminal-yellow);
+  transition: border-color 0.2s;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--background);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submitBtn:hover {
+  background: transparent;
+  color: var(--primary);
+}
+
+.btnIcon {
+  font-weight: bold;
+}
+
+.success {
+  padding: 24px;
+  text-align: center;
+}
+
+.successText {
+  color: var(--primary);
+  font-size: 16px;
+}
+
+.successIcon {
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .socialGrid {
+    grid-template-columns: 1fr;
+  }
+}

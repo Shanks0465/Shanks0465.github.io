@@ -1,0 +1,144 @@
+.about {
+  padding: 80px 20px;
+  background: var(--background);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  margin-bottom: 48px;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  color: var(--text);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.arrow {
+  color: var(--terminal-cyan);
+}
+
+.sectionSubtitle {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-left: 28px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.codeBlock {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.codeHeader {
+  background: var(--surface-light);
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.fileName {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.codeBody {
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.code {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.lineNumber {
+  display: inline-block;
+  width: 24px;
+  color: var(--text-muted);
+  user-select: none;
+}
+
+.keyword { color: var(--terminal-magenta); }
+.variable { color: var(--terminal-cyan); }
+.operator { color: var(--text); }
+.property { color: var(--terminal-blue); }
+.string { color: var(--terminal-yellow); }
+.boolean { color: var(--terminal-orange); }
+
+.bio {
+  padding: 20px 0;
+}
+
+.terminalPrompt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  margin-top: 24px;
+}
+
+.terminalPrompt:first-child {
+  margin-top: 0;
+}
+
+.promptSymbol {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.promptCommand {
+  color: var(--text);
+}
+
+.bioText {
+  color: var(--text-muted);
+  line-height: 1.8;
+  padding-left: 20px;
+  border-left: 2px solid var(--border);
+}
+
+.interests {
+  list-style: none;
+  padding-left: 20px;
+  border-left: 2px solid var(--border);
+}
+
+.interests li {
+  color: var(--text-muted);
+  padding: 4px 0;
+  position: relative;
+}
+
+.interests li::before {
+  content: '- ';
+  color: var(--terminal-cyan);
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitle {
+    font-size: 24px;
+  }
+
+  .code {
+    font-size: 12px;
+  }
+}

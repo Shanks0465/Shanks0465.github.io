@@ -1,0 +1,35 @@
+{
+  "sectionTitle": "Skills",
+  "sectionSubtitle": "// Technical arsenal",
+  "categories": [
+    {
+      "id": "cat-1",
+      "name": "Languages",
+      "icon": "code",
+      "skills": [
+        { "name": "JavaScript", "level": 80, "years": 2 },
+        { "name": "Python", "level": 90, "years": 4 }
+      ]
+    },
+    {
+      "id": "cat-2",
+      "name": "Frontend",
+      "icon": "layout",
+      "skills": [
+        { "name": "React", "level": 95, "years": 5 },
+        { "name": "Next.js", "level": 90, "years": 3 },
+        { "name": "HTML/CSS", "level": 95, "years": 6 }
+      ]
+    },
+    {
+      "id": "cat-3",
+      "name": "Backend",
+      "icon": "server",
+      "skills": [
+        { "name": "Node.js", "level": 90, "years": 5 },
+        { "name": "Flask", "level": 90, "years": 5 },
+        { "name": "Django", "level": 75, "years": 2 }
+      ]
+    }
+  ]
+}

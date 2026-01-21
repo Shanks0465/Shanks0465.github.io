@@ -1,0 +1,70 @@
+{
+  "sections": [
+    {
+      "id": "hero",
+      "enabled": true,
+      "order": 1,
+      "component": "Hero"
+    },
+    {
+      "id": "about",
+      "enabled": true,
+      "order": 2,
+      "component": "About"
+    },
+    {
+      "id": "skills",
+      "enabled": true,
+      "order": 3,
+      "component": "Skills"
+    },
+    {
+      "id": "projects",
+      "enabled": true,
+      "order": 4,
+      "component": "Projects"
+    },
+    {
+      "id": "experience",
+      "enabled": true,
+      "order": 5,
+      "component": "Experience"
+    },
+    {
+      "id": "education",
+      "enabled": true,
+      "order": 6,
+      "component": "Education"
+    },
+    {
+      "id": "contact",
+      "enabled": true,
+      "order": 7,
+      "component": "Contact"
+    }
+  ],
+  "navigation": {
+    "style": "terminal",
+    "showSectionNumbers": true,
+    "sticky": true
+  },
+  "theme": {
+    "primaryColor": "#00ff00",
+    "secondaryColor": "#0affaf",
+    "backgroundColor": "#0d1117",
+    "surfaceColor": "#161b22",
+    "textColor": "#c9d1d9",
+    "borderColor": "#30363d",
+    "terminalGreen": "#00ff00",
+    "terminalCyan": "#00ffff",
+    "terminalYellow": "#ffff00",
+    "terminalRed": "#ff0000",
+    "terminalMagenta": "#ff00ff"
+  },
+  "footer": {
+    "showSourceCode": true,
+    "sourceCodeUrl": "https://github.com/johndoe/portfolio",
+    "showLastUpdated": true,
+    "customText": "Built with Next.js | Powered by caffeine"
+  }
+}

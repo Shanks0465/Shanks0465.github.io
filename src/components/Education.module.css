@@ -1,0 +1,254 @@
+.education {
+  padding: 80px 20px;
+  background: var(--background);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  margin-bottom: 48px;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  color: var(--text);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.arrow {
+  color: var(--terminal-cyan);
+}
+
+.sectionSubtitle {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-left: 28px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.terminalPrompt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.promptSymbol {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.promptCommand {
+  color: var(--text);
+}
+
+.degrees {
+  display: flex;
+  flex-direction: column;
+}
+
+.eduCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: border-color 0.2s;
+}
+
+.eduCard:hover {
+  border-color: var(--primary);
+}
+
+.eduCard:last-child {
+  margin-bottom: 0;
+}
+
+.eduHeader {
+  margin-bottom: 8px;
+}
+
+.degree {
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.field {
+  font-size: 14px;
+  color: var(--terminal-cyan);
+}
+
+.institution {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.institutionName {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.eduMeta {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.gpa {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.gpaLabel {
+  color: var(--terminal-yellow);
+}
+
+.honors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.honor {
+  font-size: 12px;
+  padding: 4px 10px;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid var(--terminal-yellow);
+  border-radius: 4px;
+  color: var(--terminal-yellow);
+}
+
+.courses {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.coursesLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.courseList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.courseList li {
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 4px 10px;
+  background: var(--surface-light);
+  border-radius: 4px;
+}
+
+.activities {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.activitiesLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.activityList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.activityList li {
+  font-size: 12px;
+  color: var(--terminal-green);
+  padding: 4px 10px;
+  background: rgba(80, 250, 123, 0.1);
+  border: 1px solid var(--terminal-green);
+  border-radius: 4px;
+}
+
+.certifications {
+  margin-top: 16px;
+}
+
+.certGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.certCard {
+  display: flex;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+
+.certCard:hover {
+  border-color: var(--primary);
+}
+
+.certIcon {
+  color: var(--terminal-yellow);
+  flex-shrink: 0;
+}
+
+.certInfo {
+  flex: 1;
+}
+
+.certName {
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.certIssuer {
+  font-size: 13px;
+  color: var(--terminal-cyan);
+  margin-bottom: 8px;
+}
+
+.certDate {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .institution {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .certGrid {
+    grid-template-columns: 1fr;
+  }
+}
