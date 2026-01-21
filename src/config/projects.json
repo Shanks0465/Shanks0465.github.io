@@ -3,14 +3,13 @@
   "sectionSubtitle": "// Things I've built",
   "projects": [
     {
-      "id": "project-1",
-      "name": "E-Commerce Platform",
-      "description": "A full-featured e-commerce platform with real-time inventory management, payment processing, and admin dashboard.",
-      "longDescription": "Built a scalable e-commerce solution handling 10k+ daily transactions. Implemented microservices architecture with event-driven communication.",
-      "technologies": ["React", "Node.js", "PostgreSQL", "Redis", "Docker"],
-      "github": "https://github.com/johndoe/ecommerce",
-      "live": "https://myecommerce.com",
-      "image": "/projects/ecommerce.png",
+      "id": "project-2",
+      "name": "AI4Bharat Website",
+      "description": "Interactive web platform for AI4Bharat, IIT Madras research lab building open-source AI for Indian languages, featuring live model demos.",
+      "longDescription": "Built a responsive web application with interactive UI components enabling users to interact with ML models across Transliteration, Machine Translation, ASR, TTS, and LLM categories. Implemented RESTful API integrations for real-time model inference and dynamic result rendering.",
+      "technologies": ["React", "Next.js", "REST APIs", "JavaScript", "Tailwind CSS", "Model Inference"],
+      "live": "https://ai4bharat.iitm.ac.in/",
+      "image": "/projects/ai4bharat.png",
       "featured": true,
       "status": "completed",
       "year": "2024"
