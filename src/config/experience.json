@@ -4,21 +4,20 @@
   "experiences": [
     {
       "id": "exp-1",
-      "company": "Tech Corp",
-      "position": "Senior Full Stack Developer",
-      "location": "San Francisco, CA",
+      "company": "AI4Bharat",
+      "position": "Project Associate (Full Stack Developer)",
+      "location": "Chennai, Tamilnadu, India",
       "type": "full-time",
-      "startDate": "2022-03",
-      "endDate": null,
-      "current": true,
-      "description": "Leading development of customer-facing applications serving 1M+ users.",
+      "startDate": "2022-09",
+      "endDate": "2025-01",
+      "current": false,
+      "description": "",
       "responsibilities": [
-        "Architected and implemented microservices reducing latency by 40%",
-        "Led a team of 5 developers, conducting code reviews and mentoring",
-        "Implemented CI/CD pipelines reducing deployment time by 60%",
-        "Collaborated with product team to define technical requirements"
+        "Successfully spearheaded the development of the Dhruva-Platform Frontend using Next.js and React, elevating user experience and accessibility standards. Seamlessly integrated Chakra UI to ensure cohesive UI development and design uniformity. Leveraged Axios and React Query to streamline API handling and data management, enhancing efficiency across the platform.",
+        "Implemented a distributed pipeline for large scale data download and processing of PDF files using RabbitMQ and Google Cloud Platform.",
+        "Worked on a comprehensive data curation and data cleaning tool called Setu for large scale text data specifically for data for Indian LLMs. This work was part of the IndicLLMSuite paper.• Successfully spearheaded the development of the Dhruva-Platform Frontend using Next.js and React, elevating user experience and accessibility standards. Seamlessly integrated Chakra UI to ensure cohesive UI development and design uniformity. Leveraged Axios and React Query to streamline API handling and data management, enhancing efficiency across the platform. • Implemented a distributed pipeline for large scale data download and processing of PDF files using RabbitMQ and Google Cloud Platform. • Worked on a comprehensive data curation and data cleaning tool called Setu for large scale text data specifically for data for Indian LLMs. This work was part of the IndicLLMSuite paper."
       ],
-      "technologies": ["React", "Node.js", "AWS", "Kubernetes", "PostgreSQL"]
+      "technologies": ["React", "Next.js", "Django", "PostgreSQL","Docker","RabbitMQ","Redis"]
     }
   ]
 }

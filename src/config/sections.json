@@ -25,21 +25,27 @@
       "component": "Projects"
     },
     {
-      "id": "experience",
+      "id": "papers",
       "enabled": true,
       "order": 5,
+      "component": "Papers"
+    },
+    {
+      "id": "experience",
+      "enabled": true,
+      "order": 6,
       "component": "Experience"
     },
     {
       "id": "education",
       "enabled": true,
-      "order": 6,
+      "order": 7,
       "component": "Education"
     },
     {
       "id": "contact",
       "enabled": true,
-      "order": 7,
+      "order": 8,
       "component": "Contact"
     }
   ],
