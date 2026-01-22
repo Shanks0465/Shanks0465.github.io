@@ -15,31 +15,31 @@
     {
       "id": "skills",
       "enabled": true,
-      "order": 3,
+      "order": 7,
       "component": "Skills"
     },
     {
       "id": "projects",
       "enabled": true,
-      "order": 4,
+      "order": 5,
       "component": "Projects"
     },
     {
       "id": "papers",
       "enabled": true,
-      "order": 5,
+      "order": 6,
       "component": "Papers"
     },
     {
       "id": "experience",
       "enabled": true,
-      "order": 6,
+      "order": 4,
       "component": "Experience"
     },
     {
       "id": "education",
       "enabled": true,
-      "order": 7,
+      "order": 3,
       "component": "Education"
     },
     {

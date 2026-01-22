@@ -1,24 +1,24 @@
-import Hero from '../components/Hero'
-import About from '../components/About'
-import Skills from '../components/Skills'
-import Projects from '../components/Projects'
-import Papers from '../components/Papers'
-import Experience from '../components/Experience'
-import Education from '../components/Education'
-import Contact from '../components/Contact'
-import Navigation from '../components/Navigation'
-import Footer from '../components/Footer'
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Skills from "../components/Skills";
+import Projects from "../components/Projects";
+import Papers from "../components/Papers";
+import Experience from "../components/Experience";
+import Education from "../components/Education";
+import Contact from "../components/Contact";
+import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 
-import profile from '../config/profile.json'
-import sectionsConfig from '../config/sections.json'
+import profile from "../config/profile.json";
+import sectionsConfig from "../config/sections.json";
 
 export default function Home() {
-  const { sections } = sectionsConfig
+  const { sections } = sectionsConfig;
 
   // Sort sections by order and filter enabled ones
   const enabledSections = sections
-    .filter(s => s.enabled)
-    .sort((a, b) => a.order - b.order)
+    .filter((s) => s.enabled)
+    .sort((a, b) => a.order - b.order);
 
   const sectionComponents = {
     Hero,
@@ -28,20 +28,20 @@ export default function Home() {
     Papers,
     Experience,
     Education,
-    Contact
-  }
+    Contact,
+  };
 
   return (
     <main>
       <Navigation sections={enabledSections} profile={profile} />
 
-      {enabledSections.map(section => {
-        const Component = sectionComponents[section.component]
-        if (!Component) return null
-        return <Component key={section.id} id={section.id} />
+      {enabledSections.map((section) => {
+        const Component = sectionComponents[section.component];
+        if (!Component) return null;
+        return <Component key={section.id} id={section.id} />;
       })}
 
       <Footer />
     </main>
-  )
+  );
 }
