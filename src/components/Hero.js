@@ -1,7 +1,11 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import profile from '../config/profile.json'
+import skills from '../config/skills.json'
+import education from '../config/education.json'
+import experience from '../config/experience.json'
+import projects from '../config/projects.json'
 import styles from './Hero.module.css'
 
 export default function Hero({ id }) {
@@ -9,6 +13,17 @@ export default function Hero({ id }) {
   const [showCursor, setShowCursor] = useState(true)
   const [currentLine, setCurrentLine] = useState(0)
   const [isTypingDone, setIsTypingDone] = useState(false)
+
+  // LLM states
+  const [userInput, setUserInput] = useState('')
+  const [chatHistory, setChatHistory] = useState([])
+  const [isModelLoading, setIsModelLoading] = useState(false)
+  const [isGenerating, setIsGenerating] = useState(false)
+  const [loadProgress, setLoadProgress] = useState('')
+  const [modelLoaded, setModelLoaded] = useState(false)
+  const engineRef = useRef(null)
+  const inputRef = useRef(null)
+  const terminalBodyRef = useRef(null)
 
   const lines = [
     { type: 'command', text: 'whoami' },
@@ -51,6 +66,167 @@ export default function Hero({ id }) {
 
     return () => clearInterval(typeInterval)
   }, [currentLine])
+
+  // Focus input when typing animation is done
+  useEffect(() => {
+    if (isTypingDone && inputRef.current) {
+      inputRef.current.focus()
+    }
+  }, [isTypingDone])
+
+  // Auto-scroll terminal to bottom
+  useEffect(() => {
+    if (terminalBodyRef.current) {
+      terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight
+    }
+  }, [chatHistory, loadProgress])
+
+  const initializeModel = async () => {
+    if (engineRef.current || isModelLoading) return
+
+    setIsModelLoading(true)
+    setLoadProgress('Initializing WebLLM...')
+
+    try {
+      const { CreateMLCEngine } = await import('@mlc-ai/web-llm')
+
+      const engine = await CreateMLCEngine('SmolLM2-1.7B-Instruct-q4f16_1-MLC', {
+        initProgressCallback: (progress) => {
+          setLoadProgress(progress.text)
+        }
+      })
+
+      engineRef.current = engine
+      setModelLoaded(true)
+      setLoadProgress('')
+    } catch (error) {
+      console.error('Failed to load model:', error)
+      setLoadProgress(`Error: ${error.message}`)
+    } finally {
+      setIsModelLoading(false)
+    }
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (!userInput.trim() || isGenerating) return
+
+    const command = userInput.trim()
+    setUserInput('')
+
+    // Add user command to history
+    setChatHistory(prev => [...prev, { type: 'command', text: command }])
+
+    // Handle special commands
+    if (command.toLowerCase() === 'clear') {
+      setChatHistory([])
+      return
+    }
+
+    if (command.toLowerCase() === 'help') {
+      setChatHistory(prev => [...prev, {
+        type: 'output',
+        text: 'Commands: clear, help, or chat with the AI assistant'
+      }])
+      return
+    }
+
+    // Initialize model if not loaded
+    if (!modelLoaded && !isModelLoading) {
+      await initializeModel()
+    }
+
+    if (!engineRef.current) {
+      setChatHistory(prev => [...prev, {
+        type: 'output',
+        text: 'Model failed to load. Please refresh and try again.'
+      }])
+      return
+    }
+
+    setIsGenerating(true)
+
+    try {
+      // Build context from config files
+      const skillsSummary = skills.categories.map(cat =>
+        `${cat.name}: ${cat.skills.map(s => `${s.name} (${s.years} years)`).join(', ')}`
+      ).join('; ')
+
+      const projectsSummary = projects.projects.map(p =>
+        `${p.name} (${p.year}): ${p.description} [Tech: ${p.technologies.join(', ')}]${p.live ? ` - Live at: ${p.live}` : ''}`
+      ).join('\n')
+
+      const educationSummary = education.education.map(e =>
+        `${e.degree} in ${e.field} from ${e.institution} (${e.startDate} to ${e.endDate}), GPA: ${e.gpa}. Activities: ${e.activities.join(', ')}`
+      ).join('\n')
+
+      const certsSummary = education.certifications.map(c =>
+        `${c.name} from ${c.issuer} (${c.date})`
+      ).join(', ')
+
+      const experienceSummary = experience.experiences.map(e =>
+        `${e.position} at ${e.company} (${e.startDate} to ${e.current ? 'Present' : e.endDate}): ${e.description} Technologies: ${e.technologies.join(', ')}`
+      ).join('\n')
+
+      const systemPrompt = `You are a helpful AI assistant embedded in ${profile.name}'s portfolio terminal. Keep responses brief and conversational (2-3 sentences max). Answer questions about ${profile.name} using the following information:
+
+PROFILE:
+- Name: ${profile.name}
+- Title: ${profile.title}
+- Location: ${profile.location}
+- Email: ${profile.email}
+- GitHub: ${profile.social.github}
+- LinkedIn: ${profile.social.linkedin}
+
+SKILLS:
+${skillsSummary}
+
+PROJECTS:
+${projectsSummary}
+
+EDUCATION:
+${educationSummary}
+Certifications: ${certsSummary}
+
+EXPERIENCE:
+${experienceSummary}
+
+Use this information to answer visitor questions about ${profile.name}'s background, skills, projects, education, and experience. Be helpful and accurate.`
+
+      const response = await engineRef.current.chat.completions.create({
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: command }
+        ],
+        max_tokens: 150,
+        temperature: 0.3,
+        top_p: 0.9,
+        stream: true
+      })
+
+      let fullResponse = ''
+      setChatHistory(prev => [...prev, { type: 'output', text: '' }])
+
+      for await (const chunk of response) {
+        const content = chunk.choices[0]?.delta?.content || ''
+        fullResponse += content
+        setChatHistory(prev => {
+          const newHistory = [...prev]
+          newHistory[newHistory.length - 1] = { type: 'output', text: fullResponse }
+          return newHistory
+        })
+      }
+    } catch (error) {
+      console.error('Generation error:', error)
+      setChatHistory(prev => [...prev, {
+        type: 'output',
+        text: `Error: ${error.message}`
+      }])
+    } finally {
+      setIsGenerating(false)
+      inputRef.current?.focus()
+    }
+  }
 
   const renderLines = () => {
     const rendered = []
@@ -118,18 +294,66 @@ export default function Hero({ id }) {
               {profile.username}@portfolio: ~
             </span>
           </div>
-          <div className={styles.terminalBody}>
+          <div className={styles.terminalBody} ref={terminalBodyRef}>
             {renderLines()}
-            {isTypingDone && (
+
+            {/* Hint message after typing animation completes */}
+            {isTypingDone && chatHistory.length === 0 && !loadProgress && (
+              <div className={styles.hintLine}>
+                <span className={styles.hintText}>
+                  Tip: Ask me anything in this terminal to learn more about me via WebLLM
+                </span>
+              </div>
+            )}
+
+            {/* Chat history */}
+            {chatHistory.map((item, index) => (
+              <div key={`chat-${index}`} className={styles.line}>
+                {item.type === 'command' ? (
+                  <>
+                    <span className={styles.promptUser}>{profile.username}</span>
+                    <span className={styles.promptAt}>@</span>
+                    <span className={styles.promptHost}>portfolio</span>
+                    <span className={styles.promptColon}>:</span>
+                    <span className={styles.promptPath}>~</span>
+                    <span className={styles.promptSymbol}>$ </span>
+                    <span className={styles.command}>{item.text}</span>
+                  </>
+                ) : (
+                  <span className={styles.output}>{item.text}</span>
+                )}
+              </div>
+            ))}
+
+            {/* Loading progress */}
+            {loadProgress && (
               <div className={styles.line}>
+                <span className={styles.loadingText}>{loadProgress}</span>
+              </div>
+            )}
+
+            {/* Interactive input */}
+            {isTypingDone && (
+              <form onSubmit={handleSubmit} className={styles.inputLine}>
                 <span className={styles.promptUser}>{profile.username}</span>
                 <span className={styles.promptAt}>@</span>
                 <span className={styles.promptHost}>portfolio</span>
                 <span className={styles.promptColon}>:</span>
                 <span className={styles.promptPath}>~</span>
                 <span className={styles.promptSymbol}>$ </span>
-                {showCursor && <span className={styles.cursor}>_</span>}
-              </div>
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={userInput}
+                  onChange={(e) => setUserInput(e.target.value)}
+                  className={styles.terminalInput}
+                  placeholder={modelLoaded ? 'Ask me anything...' : 'Type to load AI...'}
+                  disabled={isGenerating}
+                  autoComplete="off"
+                  spellCheck="false"
+                />
+                {showCursor && !userInput && <span className={styles.cursor}>_</span>}
+              </form>
             )}
           </div>
         </div>
