@@ -36,7 +36,6 @@
         { "name": "Git", "icon": "SiGit", "color": "#F05032" },
         { "name": "Docker", "icon": "SiDocker", "color": "#2496ED" },
         { "name": "Linux", "icon": "SiLinux", "color": "#FCC624" },
-        { "name": "VS Code", "icon": "SiVisualstudiocode", "color": "#007ACC" },
         { "name": "Redis", "icon": "SiRedis", "color": "#ffffff" },
         { "name": "GCP", "icon": "SiGooglecloud", "color": "#4285F4" },
         { "name": "Celery", "icon": "SiCelery", "color": "#37814A" },
