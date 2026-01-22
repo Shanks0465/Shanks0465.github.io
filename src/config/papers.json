@@ -5,15 +5,40 @@
     {
       "id": "paper-1",
       "title": "IndicLLMSuite",
-      "authors": ["Mohammed Safi Ur Rahman Khan", "Priyam Mehta", "Ananth Sankar", "Umashankar Kumaravelan", "Sumanth Doddapaneni, Suriyaprasaad B", "Varun Balan G", "Sparsh Jain", "Anoop Kunchukuttan", "Pratyush Kumar", "Raj Dabre", "Mitesh M. Khapra"],
+      "authors": [
+        "Mohammed Safi Ur Rahman Khan",
+        "Priyam Mehta",
+        "Ananth Sankar",
+        "Umashankar Kumaravelan",
+        "Sumanth Doddapaneni, Suriyaprasaad B",
+        "Varun Balan G",
+        "Sparsh Jain",
+        "Anoop Kunchukuttan",
+        "Pratyush Kumar",
+        "Raj Dabre",
+        "Mitesh M. Khapra"
+      ],
       "venue": "ACL 2024",
       "year": "2024",
       "abstract": "Despite the considerable advancements in English LLMs, the progress in building comparable models for other languages has been hindered due to the scarcity of tailored resources. Our work aims to bridge this divide by introducing an expansive suite of resources specifically designed for the development of Indic LLMs, covering 22 languages, containing a total of 251B tokens and 74.8M instruction-response pairs. Recognizing the importance of both data quality and quantity, our approach combines highly curated manually verified data, unverified yet valuable data, and synthetic data. We build a clean, open-source pipeline for curating pre-training data from diverse sources, including websites, PDFs, and videos, incorporating best practices for crawling, cleaning, flagging, and deduplication. For instruction-fine tuning, we amalgamate existing Indic datasets, translate/transliterate English datasets into Indian languages, and utilize LLaMa2 and Mixtral models to create conversations grounded in articles from Indian Wikipedia and Wikihow. Additionally, we address toxicity alignment by generating toxic prompts for multiple scenarios and then generate non-toxic responses by feeding these toxic prompts to an aligned LLaMa2 model. We hope that the datasets, tools, and resources released as a part of this work will not only propel the research and development of Indic LLMs but also establish an open-source blueprint for extending such efforts to other languages. The data and other artifacts created as part of this work are released with permissive licenses.",
-      "tags": ["NLP", "Machine Learning", "Deep Learning"],
+      "tags": ["NLP", "LLM", "Deep Learning", "Datasets"],
       "arxiv": "https://arxiv.org/abs/2403.06350",
       "pdf": "",
       "code": "https://github.com/AI4Bharat/IndicLLMSuite",
       "featured": true
+    },
+    {
+      "id": "paper-2",
+      "title": "Localized Super Resolution for Foreground Images using U-Net and MR-CNN",
+      "authors": ["Umashankar Kumaravelan", "Nivedita M"],
+      "venue": "Submitted ICRTAC 2021",
+      "year": "2021",
+      "abstract": "Images play a vital role in understanding data through visual representation. It gives a clear representation of the object in context. But if this image is not clear it might not be of much use. Thus, the topic of Image Super Resolution arose and many researchers have been working towards applying Computer Vision and Deep Learning Techniques to increase the quality of images. One of the applications of Super Resolution is to increase the quality of Portrait Images. Portrait Images are images which mainly focus on capturing the essence of the main object in the frame, where the object in context is highlighted whereas the background is occluded. When performing Super Resolution the model tries to increase the overall resolution of the image. But in portrait images the foreground resolution is more important than that of the background. In this paper, the performance of a Convolutional Neural Network (CNN) architecture known as U-Net for Super Resolution combined with Mask Region Based CNN (MR-CNN) for foreground super resolution is analysed. This analysis is carried out based on Localized Super Resolution i.e. We pass the LR Images to a pre-trained Image Segmentation model (MR-CNN) and perform super resolution inference on the foreground or Segmented Images and compute the Structural Similarity Index (SSIM) and Peak Signal-to-Noise Ratio (PSNR) metrics for comparisons.",
+      "tags": ["Computer Vision", "Deep Learning"],
+      "arxiv": "https://arxiv.org/abs/2110.14413v1",
+      "pdf": "",
+      "code": "",
+      "featured": false
     }
   ]
 }

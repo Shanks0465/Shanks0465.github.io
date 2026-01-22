@@ -126,6 +126,13 @@
 
 .companyName {
   color: var(--terminal-cyan);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+a.companyName:hover {
+  opacity: 0.8;
+  text-decoration: underline;
 }
 
 .meta {
@@ -195,6 +202,59 @@
   color: var(--terminal-cyan);
 }
 
+.awardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.awardCard {
+  display: flex;
+  gap: 16px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+
+.awardCard:hover {
+  border-color: var(--primary);
+}
+
+.awardIcon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.awardContent {
+  flex: 1;
+}
+
+.awardTitle {
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.awardIssuer {
+  font-size: 14px;
+  color: var(--terminal-cyan);
+  margin-bottom: 4px;
+}
+
+.awardDate {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.awardDescription {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
 @media (max-width: 768px) {
   .timelineItem {
     gap: 16px;
@@ -213,6 +273,14 @@
   }
 
   .timelineContent {
+    padding: 16px;
+  }
+
+  .awardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .awardCard {
     padding: 16px;
   }
 }
