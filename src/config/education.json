@@ -24,23 +24,5 @@
         "Ford GME Hackathon 2019 3rd Place Winner"
       ]
     }
-  ],
-  "certifications": [
-    {
-      "id": "cert-1",
-      "name": "AWS Solutions Architect - Associate",
-      "issuer": "Amazon Web Services",
-      "date": "2021-06",
-      "expires": "2024-06",
-      "credentialUrl": "https://aws.amazon.com/verification"
-    },
-    {
-      "id": "cert-2",
-      "name": "Certified Kubernetes Administrator",
-      "issuer": "CNCF",
-      "date": "2021-09",
-      "expires": "2024-09",
-      "credentialUrl": "https://cncf.io/verification"
-    }
   ]
 }

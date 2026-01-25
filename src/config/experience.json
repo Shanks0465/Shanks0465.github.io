@@ -6,16 +6,18 @@
       "id": "exp-1",
       "company": "AI4Bharat",
       "companyPage": "https://ai4bharat.iitm.ac.in/",
-      "position": "Project Associate (Full Stack Developer)",
+      "position": "Project Associate (Software Engineer)",
       "location": "Chennai, Tamilnadu, India",
       "type": "full-time",
+      "domain": "AI/ML Research",
       "startDate": "2022-09",
       "endDate": "2025-01",
       "current": false,
       "description": "",
       "responsibilities": [
         "Successfully spearheaded the development of the Dhruva-Platform Frontend using Next.js and React, elevating user experience and accessibility standards. Seamlessly integrated Chakra UI to ensure cohesive UI development and design uniformity. Leveraged Axios and React Query to streamline API handling and data management, enhancing efficiency across the platform.",
-        "Implemented a distributed pipeline for large scale data download and processing of PDF files using RabbitMQ and Google Cloud Platform.",
+        "Implemented a distributed pipeline for large scale data download and processing of PDF files using RabbitMQ and Google Cloud Platform. Reduced compute costs by 40% against the estimated budget.",
+        "Worked on Django ORM to SQL Query Migration which led to 72% Increase in request response times while querying for reports and statistics of Shoonya,  an open-source Language Data Collection Platform.",
         "Worked on a comprehensive data curation and data cleaning tool called Setu for large scale text data specifically for data for Indian LLMs. This work was part of the IndicLLMSuite paper.• Successfully spearheaded the development of the Dhruva-Platform Frontend using Next.js and React, elevating user experience and accessibility standards. Seamlessly integrated Chakra UI to ensure cohesive UI development and design uniformity. Leveraged Axios and React Query to streamline API handling and data management, enhancing efficiency across the platform. • Implemented a distributed pipeline for large scale data download and processing of PDF files using RabbitMQ and Google Cloud Platform. • Worked on a comprehensive data curation and data cleaning tool called Setu for large scale text data specifically for data for Indian LLMs. This work was part of the IndicLLMSuite paper."
       ],
       "technologies": [
@@ -35,14 +37,15 @@
       "position": "Senior Analyst (Full Stack Developer)",
       "location": "Chennai, Tamilnadu, India",
       "type": "full-time",
+      "domain": "Healthcare Technology",
       "startDate": "2025-02",
       "endDate": "",
       "current": true,
       "description": "",
       "responsibilities": [
         "Contributed to the Frontend Development of EVoC (Enterprise Voice of Customer) UI leveraging React, Next.js and React Chart JS. EVoC is an application that enables the CX Team to analyze customer interactions via graphical visualizations to determine various outcomes and understand the users experience with Highmark Health's Insurance Products.",
-        "Contributed to the Gitlab CI/CD Pipeline with Python Script Integration for our inhouse Provider Lettering Application Codebase in order to streamline lower and production environment builds and hence streamlining the deployment process. The pipeline contains stages to validate work item, run unit tests, package and deploy to the desired environment via Pipeline actions.",
-        "Assisted in identifying various system bottlenecks and issues in our Lettering Flask Codebase and actively worked towards implementing resilient solutions."
+        "Contributed to the Gitlab CI/CD Pipeline with Python Script Integration for our inhouse Healthcare Provider Lettering Application Codebase in order to streamline lower and production environment builds and deployment process. The pipeline contains stages to validate work item, run unit tests, package and deploy to the desired environment via Pipeline actions.",
+        "Currently working on identifying various system bottlenecks and issues in our Lettering Flask Codebase and actively implementing resilient solutions."
       ],
       "technologies": [
         "React",
@@ -61,6 +64,7 @@
       "position": "Data Scientist Intern",
       "location": "Bengaluru, Karnataka, India",
       "type": "internship",
+      "domain": "E-commerce",
       "startDate": "2020-12",
       "endDate": "2021-06",
       "current": false,
@@ -80,6 +84,7 @@
       "position": "React Native Developer Intern",
       "location": "Mumbai, Maharashtra, India",
       "type": "internship",
+      "domain": "HealthTech",
       "startDate": "2020-05",
       "endDate": "2020-07",
       "current": false,

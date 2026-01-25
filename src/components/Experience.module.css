@@ -162,6 +162,15 @@ a.companyName:hover {
   text-transform: uppercase;
 }
 
+.domainBadge {
+  font-size: 11px;
+  padding: 2px 8px;
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid var(--terminal-cyan);
+  border-radius: 4px;
+  color: var(--terminal-cyan);
+}
+
 .description {
   font-size: 14px;
   color: var(--text-muted);

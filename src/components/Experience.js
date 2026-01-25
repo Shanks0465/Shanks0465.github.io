@@ -77,6 +77,9 @@ export default function Experience({ id }) {
                       {formatDate(exp.startDate)} - {formatDate(exp.endDate)}
                     </span>
                     <span className={styles.location}>{exp.location}</span>
+                    {exp.domain && (
+                      <span className={styles.domainBadge}>{exp.domain}</span>
+                    )}
                     {exp.current && (
                       <span className={styles.currentBadge}>current</span>
                     )}
