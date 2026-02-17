@@ -45,7 +45,7 @@
       "responsibilities": [
         "Contributed to the Frontend Development of EVoC (Enterprise Voice of Customer) UI leveraging React, Next.js and React Chart JS. EVoC is an application that enables the CX Team to analyze customer interactions via graphical visualizations to determine various outcomes and understand the users experience with Highmark Health's Insurance Products.",
         "Contributed to the Gitlab CI/CD Pipeline with Python Script Integration for our inhouse Healthcare Provider Lettering Application Codebase in order to streamline lower and production environment builds and deployment process. The pipeline contains stages to validate work item, run unit tests, package and deploy to the desired environment via Pipeline actions.",
-        "Currently working on identifying various system bottlenecks and issues in our Lettering Flask Codebase and actively implementing resilient solutions."
+        "Developed and optimized features for the Healthcare Provider Lettering Flask application while identifying and resolving system bottlenecks. Implemented test-driven development (TDD) practices with Pytest for backend services and Jest for frontend components, improving code coverage and reducing regression issues."
       ],
       "technologies": [
         "React",
@@ -54,7 +54,9 @@
         "PostgreSQL",
         "Gitlab CI/CD",
         "Celery",
-        "Redis"
+        "Redis",
+        "Jest",
+        "Pytest"
       ]
     },
     {
