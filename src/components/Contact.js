@@ -1,10 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import profile from '../config/profile.json'
 import styles from './Contact.module.css'
 
-export default function Contact({ id }) {
+export default function Contact({ id, profile }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',

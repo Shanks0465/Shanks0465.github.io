@@ -1,10 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import projectsData from '../config/projects.json'
 import styles from './Projects.module.css'
 
-export default function Projects({ id }) {
+export default function Projects({ id, projectsData }) {
   const [filter, setFilter] = useState('all')
 
   const filteredProjects = filter === 'all'

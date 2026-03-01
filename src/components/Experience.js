@@ -1,7 +1,6 @@
-import experienceData from "../config/experience.json";
 import styles from "./Experience.module.css";
 
-export default function Experience({ id }) {
+export default function Experience({ id, experienceData }) {
   const formatDate = (dateStr) => {
     if (!dateStr) return "Present";
     const date = new Date(dateStr);

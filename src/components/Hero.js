@@ -1,12 +1,6 @@
 'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react'
-import profile from '../config/profile.json'
-import experience from '../config/experience.json'
-import skills from '../config/skills.json'
-import education from '../config/education.json'
-import projects from '../config/projects.json'
-import papers from '../config/papers.json'
 import styles from './Hero.module.css'
 
 const LLM_CONFIG = {
@@ -18,8 +12,10 @@ const LLM_CONFIG = {
   presence_penalty: 0.6,   
 }
 
-// Build system prompt from all config data
-const buildSystemPrompt = () => {
+// Build system prompt from all fetched data
+const buildSystemPrompt = (data) => {
+  const { profile, skills, experience, projects, education, papers } = data
+
   const skillsList = skills.categories.map(cat =>
     `${cat.name}: ${cat.skills.map(s => s.name).join(', ')}`
   ).join('\n')
@@ -78,7 +74,8 @@ Awards:
 ${awardsList}`
 }
 
-export default function Hero({ id }) {
+export default function Hero({ id, profile, skills, experience, projects, education, papers }) {
+  const data = { profile, skills, experience, projects, education, papers }
   const [displayText, setDisplayText] = useState('')
   const [showCursor, setShowCursor] = useState(true)
   const [currentLine, setCurrentLine] = useState(0)
@@ -93,11 +90,11 @@ export default function Hero({ id }) {
 
   const lines = [
     { type: 'command', text: 'whoami' },
-    { type: 'output', text: profile.name },
+    { type: 'output', text: profile?.name ?? '' },
     { type: 'command', text: 'cat title.txt' },
-    { type: 'output', text: profile.title },
+    { type: 'output', text: profile?.title ?? '' },
     { type: 'command', text: 'cat location.txt' },
-    { type: 'output', text: profile.location }
+    { type: 'output', text: profile?.location ?? '' },
   ]
 
   // Initialize WebLLM engine
@@ -207,7 +204,7 @@ export default function Hero({ id }) {
     try {
       const response = await engineRef.current.chat.completions.create({
         messages: [
-          { role: 'system', content: buildSystemPrompt() },
+          { role: 'system', content: buildSystemPrompt(data) },
           ...chatMessages.filter(m => m.type !== 'system').map(m => ({
             role: m.type === 'user' ? 'user' : 'assistant',
             content: m.text

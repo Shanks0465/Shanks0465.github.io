@@ -1,7 +1,6 @@
-import educationData from "../config/education.json";
 import styles from "./Education.module.css";
 
-export default function Education({ id }) {
+export default function Education({ id, educationData }) {
   const formatDate = (dateStr) => {
     if (!dateStr) return "";
     const date = new Date(dateStr);

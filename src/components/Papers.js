@@ -1,10 +1,9 @@
 'use client'
 
 import { useState, useCallback, useEffect, useRef } from 'react'
-import papersData from '../config/papers.json'
 import styles from './Papers.module.css'
 
-export default function Papers({ id }) {
+export default function Papers({ id, papersData }) {
   const [filter, setFilter] = useState('all')
   const [currentIndex, setCurrentIndex] = useState(0)
   const terminalRef = useRef(null)

@@ -1,7 +1,6 @@
-import profile from '../config/profile.json'
 import styles from './About.module.css'
 
-export default function About({ id }) {
+export default function About({ id, profile }) {
   return (
     <section id={id} className={styles.about}>
       <div className={styles.container}>

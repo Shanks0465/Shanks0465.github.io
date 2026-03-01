@@ -1,12 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import skillsData from "../config/skills.json";
 import styles from "./Skills.module.css";
 
-export default function Skills({ id }) {
+export default function Skills({ id, skillsData }) {
   const [activeCategory, setActiveCategory] = useState(
-    skillsData.categories[0].id,
+    skillsData?.categories?.[0]?.id ?? null,
   );
 
   const activeSkills =
